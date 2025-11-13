@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9b048acc87ba046f692001cf8d1c7a0a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181590
+  packageName: Warped Space Shooter
+  packageVersion: 1.0
+  assetPath: Assets/Space Shooter Assets/Artwork/explosion/explosion-animation.anim
+  uploadId: 397140

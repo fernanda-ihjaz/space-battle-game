@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5b295ae41f66d4430b43a1bb3ec90053
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181590
+  packageName: Warped Space Shooter
+  packageVersion: 1.0
+  assetPath: Assets/Space Shooter Assets/Artwork/explosion/explosion1.controller
+  uploadId: 397140
