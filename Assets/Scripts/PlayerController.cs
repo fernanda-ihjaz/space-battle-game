@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public Transform LocationOfTheShot;
     
     public float speed;
+    public float tiltAngle = 20f;
+    public float tiltSpeed = 5f;
 
     public bool canShoot;
 
@@ -27,6 +29,14 @@ public class PlayerController : MonoBehaviour
     {
         movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
         oRigidbody2D.linearVelocity = movement * speed;
+        
+        float targetRotation = movement.y * tiltAngle;
+        
+        float currentZRotation = transform.rotation.eulerAngles.z;
+        if (currentZRotation > 180) currentZRotation -= 360;
+        
+        float newRotation = Mathf.Lerp(currentZRotation, targetRotation, Time.deltaTime * tiltSpeed);
+        transform.rotation = Quaternion.Euler(0, 0, newRotation);
     }
 
     private void Shoot()
