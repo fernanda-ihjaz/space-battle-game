@@ -21,9 +21,9 @@ O jogo foi desenvolvido utilizando a game engine Unity, conforme a recomendaçã
 ## 🎮 Como Jogar
 
 **Controles (Sugestão):**
-Movimentar Nave (Player):
+***Movimentar Nave (Player):***
  -> Setas ou WASD
- Disparo:
+ ***Disparo:***
  -> Botão direito do mouse ou Ctrl
 * **Em desenvolvimento**
 

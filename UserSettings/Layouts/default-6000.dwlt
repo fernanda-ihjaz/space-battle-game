@@ -624,7 +624,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: a6b70000
     m_LastClickedID: 47014
-    m_ExpandedIDs: 0000000034b7000036b7000038b70000
+    m_ExpandedIDs: 0000000038b700003ab700003cb70000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -653,7 +653,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 5cceffff
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000034b7000036b7000038b70000
+    m_ExpandedIDs: 0000000038b700003ab700003cb70000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
