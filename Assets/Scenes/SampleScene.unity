@@ -397,7 +397,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2458405962147141326, guid: db4cfb9f365c7514f8a49c40b7b6507d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.71
+      value: -3.81
       objectReference: {fileID: 0}
     - target: {fileID: 2458405962147141326, guid: db4cfb9f365c7514f8a49c40b7b6507d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -627,8 +627,10 @@ MonoBehaviour:
   shootPlayer: {fileID: 2887032566399191957, guid: 68ba463ba641f2542b2e368f8f61894a, type: 3}
   LocationOfTheShot: {fileID: 104432041}
   speed: 5
-  tiltAngle: 20
-  tiltSpeed: 5
+  rotationSpeed: 180
+  boostMultiplier: 2
+  boostDuration: 3
+  boostCooldown: 5
   canShoot: 0
   health: 3
   invincibilityDuration: 2

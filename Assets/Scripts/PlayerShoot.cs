@@ -3,15 +3,19 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
     public float shootSpeed;
-    public float lifeTime = 2.5f; // Tempo de vida do tiro
+    public float lifeTime = 2f; // Tempo de vida do tiro
     private Rigidbody2D rb;
+    private Vector2 shootDirection;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         
-        // Define a velocidade do Rigidbody em linha reta
-        rb.linearVelocity = transform.right * shootSpeed;
+        // Captura a direção que a nave está apontando no momento do disparo
+        shootDirection = transform.right;
+        
+        // Define a velocidade do tiro na direção da nave
+        rb.linearVelocity = shootDirection * shootSpeed;
         
         // Congela a rotação para não girar
         rb.freezeRotation = true;
@@ -22,10 +26,13 @@ public class PlayerShoot : MonoBehaviour
 
     void Update()
     {
-        // Garante que o tiro não rotacione
+        // Garante que o tiro não rotacione e mantenha a direção inicial
         if (rb != null)
         {
             rb.angularVelocity = 0;
+            rb.linearVelocity = shootDirection * shootSpeed;
         }
     }
 }
+
+

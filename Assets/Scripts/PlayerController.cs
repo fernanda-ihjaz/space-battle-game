@@ -7,11 +7,17 @@ public class PlayerController : MonoBehaviour
     public GameObject shootPlayer;
     public Transform LocationOfTheShot;
     
-    public float speed;
-    public float tiltAngle = 20f;
-    public float tiltSpeed = 5f;
-
+    public float speed = 7f;
+    public float rotationSpeed = 150f; // Velocidade de rotação da nave
+    public float boostMultiplier = 2f; // Multiplicador do boost
+    public float boostDuration = 3f; // Duração do boost em segundos
+    public float boostCooldown = 15f; // Tempo de recarga do boost
+    
     public bool canShoot;
+    
+    private bool isBoosting = false;
+    private bool canBoost = true;
+    private float boostTimer = 0f;
     
     [Header("Sistema de Dano")]
     public int health = 3;
@@ -32,20 +38,57 @@ public class PlayerController : MonoBehaviour
     {
         MovementPlayer();
         Shoot();
+        UpdateBoost();
     }
 
     private void MovementPlayer()
     {
-        movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
-        oRigidbody2D.linearVelocity = movement * speed;
+        // Rotação com setas cima/baixo
+        float rotation = Input.GetAxis("Vertical");
+        transform.Rotate(0, 0, -rotation * rotationSpeed * Time.deltaTime);
         
-        float targetRotation = movement.y * tiltAngle;
+        // Movimento para frente/trás com setas direita/esquerda
+        float moveInput = Input.GetAxis("Horizontal");
+        Vector2 moveDirection = transform.right * moveInput;
         
-        float currentZRotation = transform.rotation.eulerAngles.z;
-        if (currentZRotation > 180) currentZRotation -= 360;
+        // Aplica velocidade com ou sem boost
+        float currentSpeed = isBoosting ? speed * boostMultiplier : speed;
         
-        float newRotation = Mathf.Lerp(currentZRotation, targetRotation, Time.deltaTime * tiltSpeed);
-        transform.rotation = Quaternion.Euler(0, 0, newRotation);
+        // Aplica o movimento
+        oRigidbody2D.linearVelocity = moveDirection * currentSpeed;
+    }
+    
+    private void UpdateBoost()
+    {
+        // Ativa o boost ao pressionar espaço (se disponível)
+        if (Input.GetKeyDown(KeyCode.Space) && canBoost)
+        {
+            isBoosting = true;
+            canBoost = false;
+            boostTimer = boostDuration;
+        }
+        
+        // Gerencia o timer do boost
+        if (isBoosting)
+        {
+            boostTimer -= Time.deltaTime;
+            
+            if (boostTimer <= 0)
+            {
+                isBoosting = false;
+                boostTimer = boostCooldown;
+            }
+        }
+        // Cooldown para poder usar boost novamente
+        else if (!canBoost)
+        {
+            boostTimer -= Time.deltaTime;
+            
+            if (boostTimer <= 0)
+            {
+                canBoost = true;
+            }
+        }
     }
 
     private void Shoot()
@@ -109,7 +152,6 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         Debug.Log("Game Over!");
-        // Aqui você pode adicionar lógica de game over
         Destroy(gameObject);
     }
 }

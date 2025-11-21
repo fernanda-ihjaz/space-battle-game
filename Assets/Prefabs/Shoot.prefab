@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ff76ae674bab74f9ac8661bb486282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerShoot
-  shootSpeed: 15
+  shootSpeed: 20
   lifeTime: 5
 --- !u!50 &-5072664683657042486
 Rigidbody2D:
