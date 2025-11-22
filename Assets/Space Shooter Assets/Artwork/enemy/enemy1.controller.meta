@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cff2a6443d9d64f5a99bc31bae56d516
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181590
+  packageName: Warped Space Shooter
+  packageVersion: 1.0
+  assetPath: Assets/Space Shooter Assets/Artwork/enemy/enemy1.controller
+  uploadId: 397140

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d018582dfd2c8486089c2af452aec4b3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181590
+  packageName: Warped Space Shooter
+  packageVersion: 1.0
+  assetPath: Assets/Space Shooter Assets/Artwork/Hit/hit1.controller
+  uploadId: 397140
