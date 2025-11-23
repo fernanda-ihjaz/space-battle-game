@@ -144,6 +144,9 @@ public class Enemy : MonoBehaviour
         currentLifeEnemy -= damage;
         if (currentLifeEnemy <= 0)
         {
+            if (GameManager.Instance != null)
+                GameManager.Instance.IncreaseDefeatedEnemies();
+
             Destroy(gameObject);
         }
     }
@@ -157,6 +160,8 @@ public class Enemy : MonoBehaviour
             {
                 player.HurtPlayer(1);
             }
+            if (GameManager.Instance != null)
+                GameManager.Instance.IncreaseDefeatedEnemies();
 
             Destroy(gameObject);
         }
