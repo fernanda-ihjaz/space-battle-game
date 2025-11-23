@@ -47,14 +47,16 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+        ResetPlayer();
         SceneManager.LoadScene(gameScene);
     }
     public void IncreaseScore(int points)
     {
         currentScore += points;
     }
-    public void ResetScore()
+    public void ResetPlayer()
     {
         currentScore = 0;
+        defeatedEnemies = 0;
     }
 }
