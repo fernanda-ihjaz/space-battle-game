@@ -38,7 +38,6 @@ public class PlayerController : MonoBehaviour
         canShoot = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
         healthBar.maxValue = maxHealth;
-        healthBar.minValue = 0;
         healthBar.value = health;
     }
 
