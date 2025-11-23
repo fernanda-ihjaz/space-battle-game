@@ -213,3 +213,4 @@ MonoBehaviour:
   followPlayer: 1
   maxLifeEnemy: 0
   currentLifeEnemy: 0
+  enemyPoint: 15

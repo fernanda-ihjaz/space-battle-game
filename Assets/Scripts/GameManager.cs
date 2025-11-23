@@ -5,14 +5,12 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public Text currentScore;
-    public Text finalScoreText;
-    public Text highScoreText;
 
     //Menu Variables
     [SerializeField] private string gameScene, menuScene, gameOverScene;
 
     public int defeatedEnemies = 0;
+    public int currentScore = 0;
 
     private void Awake()
     {
@@ -51,5 +49,12 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(gameScene);
     }
-
+    public void IncreaseScore(int points)
+    {
+        currentScore += points;
+    }
+    public void ResetScore()
+    {
+        currentScore = 0;
+    }
 }

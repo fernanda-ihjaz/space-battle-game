@@ -163,6 +163,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Game Over!");
         OnPlayerDied?.Invoke();
         Destroy(gameObject);
+        GameManager.Instance.ResetScore();
         GameManager.Instance.GameOver();
     }
 }
