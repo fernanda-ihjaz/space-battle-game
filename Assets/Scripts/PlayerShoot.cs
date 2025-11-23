@@ -33,6 +33,18 @@ public class PlayerShoot : MonoBehaviour
             rb.linearVelocity = shootDirection * shootSpeed;
         }
     }
+
+    // Detecta colisão do laser do jogador com inimigos
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.HurtEnemy(1); // Supondo que o tiro cause 1 ponto de dano
+            }
+            Destroy(gameObject); // Destroi o tiro ao colidir com o inimigo
+        }
+    }
 }
-
-

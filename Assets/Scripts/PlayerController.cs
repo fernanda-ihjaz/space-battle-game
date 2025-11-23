@@ -27,7 +27,9 @@ public class PlayerController : MonoBehaviour
     private bool isInvincible = false;
     private SpriteRenderer spriteRenderer;
     private Vector2 movement;
-    
+
+    public static event System.Action OnPlayerDied;
+
     void Start()
     {
         canShoot = false;
@@ -108,7 +110,7 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    private void TakeDamage()
+    public void TakeDamage()
     {
         health--;
         Debug.Log("Vida restante: " + health);
@@ -122,7 +124,14 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(InvincibilityCoroutine());
         }
     }
-    
+
+    public void HurtPlayer(int damage)
+    {
+        // Usa o mesmo sistema de dano já existente
+        for (int i = 0; i < damage; i++)
+            TakeDamage();
+    }
+
     private IEnumerator InvincibilityCoroutine()
     {
         isInvincible = true;
@@ -152,6 +161,7 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         Debug.Log("Game Over!");
+        OnPlayerDied?.Invoke();
         Destroy(gameObject);
     }
 }
