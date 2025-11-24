@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     //Menu Variables
-    [SerializeField] private string gameScene, menuScene, gameOverScene;
-    public string playerName = "Player 1";
+    [SerializeField] private string gameScene, menuScene, gameOverScene, victoryScene;
+    public string playerName = "Partida 1";
     public int difficulty = 1;
     public int minimumEnemiesToDefeat = 5;
     public int defeatedEnemies = 0;
@@ -58,10 +58,14 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        RankingManager.AddNewScore(playerName, defeatedEnemies);
         SceneManager.LoadScene(gameOverScene);
     }
 
+    public void Victory()
+    {
+        RankingManager.AddNewScore(playerName, defeatedEnemies);
+        SceneManager.LoadScene(victoryScene);
+    }
 
     public void RestartGame()
     {
