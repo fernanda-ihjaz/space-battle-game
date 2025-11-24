@@ -9,8 +9,24 @@ public class GameManager : MonoBehaviour
     //Menu Variables
     [SerializeField] private string gameScene, menuScene, gameOverScene;
     public string playerName = "Player 1";
+    public int difficulty = 1;
+    public int minimumDefeatedEnemies;
     public int defeatedEnemies = 0;
     public int currentScore = 0;
+
+
+    public void SetPlayerName(string name)
+    {
+        playerName = name;
+    }
+
+    public void SetDifficulty(int level)
+    {
+        difficulty = level;
+        if (difficulty == 1) minimumDefeatedEnemies = 5;
+        if (difficulty == 2) minimumDefeatedEnemies = 10;
+        if (difficulty == 3) minimumDefeatedEnemies = 20;
+    }
 
     private void Awake()
     {

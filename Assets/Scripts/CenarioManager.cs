@@ -10,6 +10,7 @@ public class CenarioManager : MonoBehaviour
     [Header("Timer")]
     public float tempoMaximo = 60f;
     private float tempoRestante;
+    int diff = GameManager.Instance.difficulty;
 
     private void Start()
     {
@@ -24,8 +25,10 @@ public class CenarioManager : MonoBehaviour
 
     private void AtualizarScore()
     {
+        int minimumDefeatedEnemies = GameManager.Instance.minimumDefeatedEnemies;
+
         scoreText.text = "INIMIGOS ABATIDOS: " +
-            GameManager.Instance.defeatedEnemies + "/5";
+            GameManager.Instance.defeatedEnemies + "/"+ minimumDefeatedEnemies;
     }
 
     private void AtualizarTimer()
