@@ -83,4 +83,4 @@ Para vencer, o jogador deve cumprir três condições simultaneamente:
 ## 📥 Downloads
 
 * **[Link para baixar o executável do jogo](https://drive.google.com/drive/folders/1jWu9OzdC3p0zlI6jV_F1hz3e0Cdk47XD?usp=sharing)**
-* **[Link para o vídeo de demonstração](https://youtube.com.br)**
+* **[Link para o vídeo de demonstração](https://youtu.be/yWWxL7yRI9I)**
