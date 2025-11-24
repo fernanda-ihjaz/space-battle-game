@@ -420,9 +420,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e116986ab52285d408bfd9c261b1f0ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  gameScene: SampleScene
-  menuScene: Menu Principal
-  gameOverScene: GameOver
+  gameScene: GameScene
+  menuScene: MenuScene
+  gameOverScene: GameOverScene
   playerName: Player1
   difficulty: 1
   minimumEnemiesToDefeat: 5
