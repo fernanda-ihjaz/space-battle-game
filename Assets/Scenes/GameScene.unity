@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 11783188}
   - component: {fileID: 11783189}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,8 +494,8 @@ Transform:
   m_GameObject: {fileID: 267237499}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.35601, y: 0, z: 1}
-  m_LocalScale: {x: 48.10106, y: 2.97416, z: 1}
+  m_LocalPosition: {x: -0.35601, y: -0, z: 1}
+  m_LocalScale: {x: 48.10106, y: 4.139525, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1173717857}
@@ -818,7 +818,7 @@ GameObject:
   m_Component:
   - component: {fileID: 552442559}
   - component: {fileID: 552442560}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -895,7 +895,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 589261695}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Boundaries
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1701,7 +1701,7 @@ GameObject:
   - component: {fileID: 1085204781}
   - component: {fileID: 1085204782}
   - component: {fileID: 1085204783}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2302,7 +2302,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -2936,7 +2936,7 @@ GameObject:
   - component: {fileID: 2020688199}
   - component: {fileID: 2020688200}
   - component: {fileID: 2020688201}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3195,7 +3195,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -3209,7 +3209,7 @@ BoxCollider2D:
     drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.1, y: 1}
+  m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &2127631664
 MonoBehaviour:
