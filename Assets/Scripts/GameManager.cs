@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string gameScene, menuScene, gameOverScene;
     public string playerName = "Player 1";
     public int difficulty = 1;
-    public int minimumDefeatedEnemies;
+    public int minimumEnemiesToDefeat = 5;
     public int defeatedEnemies = 0;
     public int currentScore = 0;
 
@@ -23,9 +23,9 @@ public class GameManager : MonoBehaviour
     public void SetDifficulty(int level)
     {
         difficulty = level;
-        if (difficulty == 1) minimumDefeatedEnemies = 5;
-        if (difficulty == 2) minimumDefeatedEnemies = 10;
-        if (difficulty == 3) minimumDefeatedEnemies = 20;
+        if (difficulty == 1) minimumEnemiesToDefeat = 5;
+        if (difficulty == 2) minimumEnemiesToDefeat = 10;
+        if (difficulty == 3) minimumEnemiesToDefeat = 20;
     }
 
     private void Awake()

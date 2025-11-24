@@ -25,10 +25,10 @@ public class CenarioManager : MonoBehaviour
 
     private void AtualizarScore()
     {
-        int minimumDefeatedEnemies = GameManager.Instance.minimumDefeatedEnemies;
+        int minimumEnemiesToDefeat = GameManager.Instance.minimumEnemiesToDefeat;
 
         scoreText.text = "INIMIGOS ABATIDOS: " +
-            GameManager.Instance.defeatedEnemies + "/"+ minimumDefeatedEnemies;
+            GameManager.Instance.defeatedEnemies + "/"+ minimumEnemiesToDefeat;
     }
 
     private void AtualizarTimer()
