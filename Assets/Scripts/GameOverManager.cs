@@ -6,11 +6,13 @@ public class GameOverManager : MonoBehaviour
 {
     public void RestartGame()
     {
+        GameManager.Instance.ResetPlayer();
         GameManager.Instance.RestartGame();
     }
 
     public void GoToMenu()
     {
+        GameManager.Instance.ResetPlayer();
         GameManager.Instance.LoadMenu();
 
     }

@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     //Menu Variables
     [SerializeField] private string gameScene, menuScene, gameOverScene;
-
+    public string playerName = "Player 1";
     public int defeatedEnemies = 0;
     public int currentScore = 0;
 
@@ -42,12 +42,13 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        RankingManager.AddNewScore(playerName, defeatedEnemies);
         SceneManager.LoadScene(gameOverScene);
     }
 
+
     public void RestartGame()
     {
-        ResetPlayer();
         SceneManager.LoadScene(gameScene);
     }
     public void IncreaseScore(int points)
