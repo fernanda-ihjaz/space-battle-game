@@ -45,18 +45,14 @@ public class PlayerController : MonoBehaviour
 
     private void MovementPlayer()
     {
-        // Rotação com setas cima/baixo
-        float rotation = Input.GetAxis("Vertical");
-        transform.Rotate(0, 0, -rotation * rotationSpeed * Time.deltaTime);
-        
-        // Movimento para frente/trás com setas direita/esquerda
-        float moveInput = Input.GetAxis("Horizontal");
+        float rotationInput = Input.GetAxis("Horizontal");
+        transform.Rotate(0, 0, -rotationInput * rotationSpeed * Time.deltaTime);
+
+        float moveInput = Input.GetAxis("Vertical");
         Vector2 moveDirection = transform.right * moveInput;
-        
-        // Aplica velocidade com ou sem boost
+
         float currentSpeed = isBoosting ? speed * boostMultiplier : speed;
-        
-        // Aplica o movimento
+
         oRigidbody2D.linearVelocity = moveDirection * currentSpeed;
     }
     
