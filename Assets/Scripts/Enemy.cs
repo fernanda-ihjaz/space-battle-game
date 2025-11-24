@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public float enemySpeed;
     public float maxFiringFrequency;
     public float currentFiringFrequency;
-    public float chaseRange; // alcance da perseguição
+    public float chaseRange; // alcance da perseguiï¿½ï¿½o
     public float stoppingDistance; // distancia min entre player e enemy
     public float maxDistanceFromScreen;
     public bool armedEnemy;
@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     public bool followPlayer;
     public int maxLifeEnemy;
     public int currentLifeEnemy;
-
+    public int enemyPoint;
     private void OnEnable()
     {
         PlayerController.OnPlayerDied += DestroySelf;
@@ -90,7 +90,7 @@ public class Enemy : MonoBehaviour
 
         if (chaseOnlyWhenClose)
         {
-            // Se estiver dentro do alcance, move em direção ao player; se não, anda para a esquerda
+            // Se estiver dentro do alcance, move em direï¿½ï¿½o ao player; se nï¿½o, anda para a esquerda
             if (distanceToPlayer <= chaseRange)
             {
                 ChasePlayer(distanceToPlayer);
@@ -112,8 +112,8 @@ public class Enemy : MonoBehaviour
     {
         if (distanceToPlayer > stoppingDistance)
         {
-            // Move em direção ao player.
-            // Use MoveTowards para movimento estável sem variações de física.
+            // Move em direï¿½ï¿½o ao player.
+            // Use MoveTowards para movimento estï¿½vel sem variaï¿½ï¿½es de fï¿½sica.
             Vector3 newPos = Vector3.MoveTowards(
                 transform.position,
                 playerTransform.position,
@@ -124,8 +124,8 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            // Opcional: quando estiver muito perto você pode atacar, ficar parado, etc.
-            // Por enquanto, fica parado (ou você pode aplicar uma lógica de dano por contato).
+            // Opcional: quando estiver muito perto vocï¿½ pode atacar, ficar parado, etc.
+            // Por enquanto, fica parado (ou vocï¿½ pode aplicar uma lï¿½gica de dano por contato).
         }
     }
 
@@ -146,6 +146,7 @@ public class Enemy : MonoBehaviour
         {
             if (GameManager.Instance != null)
                 GameManager.Instance.IncreaseDefeatedEnemies();
+                GameManager.Instance.IncreaseScore(enemyPoint);
 
             Destroy(gameObject);
         }

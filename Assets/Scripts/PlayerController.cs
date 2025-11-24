@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerController : MonoBehaviour
@@ -6,7 +7,8 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D oRigidbody2D;
     public GameObject shootPlayer;
     public Transform LocationOfTheShot;
-    
+    public Slider healthBar;
+
     public float speed = 7f;
     public float rotationSpeed = 150f; // Velocidade de rotação da nave
     public float boostMultiplier = 2f; // Multiplicador do boost
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour
     
     [Header("Sistema de Dano")]
     public int health = 3;
+    public int maxHealth = 3;
     public float invincibilityDuration = 2f; // Duração da invencibilidade
     public float blinkInterval = 0.1f; // Intervalo entre piscadas
     
@@ -34,6 +37,8 @@ public class PlayerController : MonoBehaviour
     {
         canShoot = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        healthBar.maxValue = maxHealth;
+        healthBar.value = health;
     }
 
     void Update()
@@ -111,6 +116,7 @@ public class PlayerController : MonoBehaviour
         health--;
         Debug.Log("Vida restante: " + health);
         
+        healthBar.value = health;
         if (health <= 0)
         {
             Die();
@@ -158,6 +164,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Game Over!");
         OnPlayerDied?.Invoke();
+        GameManager.Instance.GameOver();
         Destroy(gameObject);
     }
 }
