@@ -8,7 +8,7 @@ public class CenarioManager : MonoBehaviour
     public Text timerText;
 
     [Header("Timer")]
-    public float tempoMaximo = 60f;
+    public float tempoMaximo = 90f;
     private float tempoRestante;
     int diff = GameManager.Instance.difficulty;
 

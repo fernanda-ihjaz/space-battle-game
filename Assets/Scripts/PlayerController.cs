@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour
     private float boostTimer = 0f;
     
     [Header("Sistema de Dano")]
-    public int health = 3;
-    public int maxHealth = 3;
+    public int health = 5;
+    public int maxHealth = 5;
     public float invincibilityDuration = 2f; // Duração da invencibilidade
     public float blinkInterval = 0.1f; // Intervalo entre piscadas
     
